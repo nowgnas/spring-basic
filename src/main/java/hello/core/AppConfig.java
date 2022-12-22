@@ -20,16 +20,19 @@ public class AppConfig {
         // 어떤 구현체가 들어갈지 정해준다
         // 생성자를 통해 주입 된다
         // MemoryMemberRepository 생성자를 주입해 준다고 표현한다 injection
+        System.out.println("memberService"); // 출력해 보면 객체를 함수를 두번 호출 하여도 한번만 생성된다.
         return new MemberServiceImpl(memberRepository()); // 역할을 정의
     }
 
     @Bean
     public MemberRepository memberRepository() { // 구현체를 정의
+        System.out.println("memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() { // 역할
+        System.out.println("orderService");
         return new OrderServiceImpl(discountPolicy(), memberRepository());
     }
 

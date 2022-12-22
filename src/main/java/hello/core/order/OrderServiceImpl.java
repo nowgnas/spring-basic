@@ -41,7 +41,12 @@ public class OrderServiceImpl implements OrderService {
         return new Order(memberId, itemName, itemPrice, discountPrice); // 주문이 생성 된다
     }
 
-//    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    // test
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
+    //    private final MemberRepository memberRepository = new MemoryMemberRepository();
 //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 //
 //    @Override
