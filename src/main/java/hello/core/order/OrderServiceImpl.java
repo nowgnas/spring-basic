@@ -1,14 +1,14 @@
 package hello.core.order;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor // final 이 붙은 것들을 생성자로 만들어 준다
 public class OrderServiceImpl implements OrderService {
     /*
      * member 와 할인에 대한 구현체를 가져와서 사용하고 있다
@@ -26,11 +26,11 @@ public class OrderServiceImpl implements OrderService {
      * OrderServiceImpl에 DiscountPolicy를 주입해 줘야 한다
      */
 
-    @Autowired
-    public OrderServiceImpl(DiscountPolicy discountPolicy, MemberRepository memberRepository) {
-        this.discountPolicy = discountPolicy;
-        this.memberRepository = memberRepository;
-    }
+//    @Autowired // 생성자가 하나이면 생략 가능
+//    public OrderServiceImpl(DiscountPolicy discountPolicy, MemberRepository memberRepository) {
+//        this.discountPolicy = discountPolicy;
+//        this.memberRepository = memberRepository;
+//    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
