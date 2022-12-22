@@ -24,4 +24,13 @@ public class ConfigurationSingletonTest {
         System.out.println(memberRepository2);
         System.out.println(memberRepository);
     }
+
+    @Test
+    void configurationDeep(){
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class); // spring bean으로 등록
+
+        System.out.println(bean.getClass());
+
+    }
 }
