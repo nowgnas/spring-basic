@@ -1,6 +1,7 @@
 package hello.core;
 
 import hello.core.discount.DiscountPolicy;
+import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
@@ -41,5 +42,15 @@ public class AppConfig {
 //        return new FixDiscountPolicy();
         return new RateDiscountPolicy(); // 새로운 정률 할인 정책으로 수정하기
     }
+
+//    public MemberService memberService() {
+//        return new MemberServiceImpl(new MemoryMemberRepository());
+//    }
+//
+//    public OrderService orderService() {
+//        return new OrderServiceImpl(
+//                new MemoryMemberRepository(),
+//                new FixDiscountPolicy());
+//    }
 
 }

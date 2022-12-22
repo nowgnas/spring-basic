@@ -19,8 +19,9 @@ public class OrderServiceImpl implements OrderService {
     /*
      * DiscountPolicy와 MemberRepository는 철저히 인터페이스에만 의존하고 있다
      */
-    private final DiscountPolicy discountPolicy;
+    private final DiscountPolicy discountPolicy; // final: 생성자에서 무조건 값이 존재해야 한다
     private final MemberRepository memberRepository;
+
     /*
      * OrderServiceImpl에 DiscountPolicy를 주입해 줘야 한다
      */
