@@ -1,8 +1,13 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository; // 추상화에만 의존
-
+    @Autowired // 자동 의존 관계 주입
+    // MemberRepository에 맞는 것을 자동으로 주입해 준다
     public MemberServiceImpl(MemberRepository memberRepository) {
         /*
          * 어떤 구현체가 들어올지 알 수 없다

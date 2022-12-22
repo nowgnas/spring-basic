@@ -5,7 +5,10 @@ import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
     /*
      * member 와 할인에 대한 구현체를 가져와서 사용하고 있다
@@ -22,6 +25,7 @@ public class OrderServiceImpl implements OrderService {
      * OrderServiceImpl에 DiscountPolicy를 주입해 줘야 한다
      */
 
+    @Autowired
     public OrderServiceImpl(DiscountPolicy discountPolicy, MemberRepository memberRepository) {
         this.discountPolicy = discountPolicy;
         this.memberRepository = memberRepository;
