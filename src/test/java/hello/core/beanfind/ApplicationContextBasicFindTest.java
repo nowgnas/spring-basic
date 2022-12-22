@@ -37,13 +37,13 @@ public class ApplicationContextBasicFindTest {
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
-    @Test
-    @DisplayName("빈 이름으로 조회X")
-    void findBeanNameX() {
-        // ac.getBean("xxxxx", MemberService.class);
-        MemberService xxxx = ac.getBean("xxxxx", MemberService.class);
-        org.junit.jupiter.api.Assertions.assertThrows(NoSuchBeanDefinitionException.class,
-                () -> ac.getBean("xxxxx", MemberService.class));
-    }
+//    @Test
+//    @DisplayName("빈 이름으로 조회X")
+//    void findBeanNameX() {
+//        // ac.getBean("xxxxx", MemberService.class);
+//        MemberService xxxx = ac.getBean("xxxxx", MemberService.class);
+//        org.junit.jupiter.api.Assertions.assertThrows(NoSuchBeanDefinitionException.class,
+//                () -> ac.getBean("xxxxx", MemberService.class));
+//    }
 
 }

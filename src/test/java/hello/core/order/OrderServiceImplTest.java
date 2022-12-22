@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceImplTest {
-    @Test
-    void createOrder() {
-        MemoryMemberRepository memberRepository = new MemoryMemberRepository();
-        memberRepository.save(new Member(1L, "name", Grade.VIP));
-
-        OrderServiceImpl orderService = new OrderServiceImpl(new FixDiscountPolicy(), memberRepository);
-        Order order = (Order) orderService.createOrder(1L, "itemA", 10000);
-    }
+//    @Test
+//    void createOrder() {
+//        MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+//        memberRepository.save(new Member(1L, "name", Grade.VIP));
+//
+//        OrderServiceImpl orderService = new OrderServiceImpl(new FixDiscountPolicy(), memberRepository);
+//        Order order = (Order) orderService.createOrder(1L, "itemA", 10000);
+//    }
 }
