@@ -13,13 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 @RequiredArgsConstructor
 public class LogDemoController {
     private final LogDemoService logDemoService;
-    private final ObjectProvider<MyLogger> myLoggerObjectProvider; // mylogger를 찾을 수 있게 된다
+    private final MyLogger myLogger; // mylogger를 찾을 수 있게 된다
 
     @RequestMapping("log-demo")
     @ResponseBody
     public String logDemo(HttpServletRequest request) {
         String requestURL = request.getRequestURL().toString();
-        MyLogger myLogger = myLoggerObjectProvider.getObject(); // 생성된다 init 호출, uuid 생성됨
         myLogger.setRequestURL(requestURL);
 
         myLogger.log("controller test");
